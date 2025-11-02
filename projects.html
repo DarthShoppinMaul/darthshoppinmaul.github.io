@@ -4,49 +4,60 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Michael Musselman</title>
-  <link rel="stylesheet" href="assets/css/projects.css">
-  <link rel="icon" href="assets/img/placeholder.svg">
+  <meta name="description" content="E-portfolio showcasing projects, skills, and reflections.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/img/favicon.svg">
 </head>
 <body>
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html">MM</a>
+    <a class="brand" href="/index.html">MM</a>
     <nav class="nav">
-      <a href="projects.html" class="active">Projects</a>
+      <a href="/about.html">About</a>
+      <a href="/skills.html">Skills & Experience</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/artifacts/index.html">Artifacts</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
-
 <main class="container">
-  <section class="toolbar">
-    <div class="toolbar-row">
-      <div class="toolbar-group">
-        <label class="label">Search</label>
-        <input id="search" class="input" type="search" placeholder="title, tags, tech…" aria-label="Search projects">
-      </div>
-      <div class="toolbar-group">
-        <label class="label">Sort by</label>
-        <select id="sort" class="select" aria-label="Sort projects">
-          <option value="end-desc">End date ↓</option>
-          <option value="end-asc">End date ↑</option>
-          <option value="name-asc">Name A–Z</option>
-          <option value="name-desc">Name Z–A</option>
-        </select>
-      </div>
-    </div>
-    <div id="chips" class="chips" aria-label="Tag filters"></div>
-    <div class="summary"><span id="count">0</span> projects</div>
-  </section>
 
-  <section id="grid" class="grid" aria-live="polite"></section>
+<h1>Projects</h1>
+<section class="note small">
+  Use the Projects gallery for quick browsing. Reflections live on artifact pages.
+</section>
+<div class="summary small">Edit <code>/assets/data/projects.json</code> to update this list.</div>
+<section id="grid" class="cards"></section>
+<script>
+(async function(){
+  const res = await fetch('/assets/data/projects.json');
+  const items = await res.json();
+  const grid = document.getElementById('grid');
+  function card(p){
+    const div = document.createElement('article');
+    div.className='card';
+    div.innerHTML = `
+      <h3>${p.title||''}</h3>
+      <p class="small">${p.summary||''}</p>
+      <div class="small">${(p.tags||[]).map(t=>`<span class='badge'>${t}</span>`).join(' ')}</div>
+      <p class="small">
+        ${(p.caseStudy?`<a href="${p.caseStudy}">Case Study</a>`:'')}
+        ${(p.source?` · <a href="${p.source}">Source</a>`:'')}
+        ${(p.demo?` · <a href="${p.demo}">Demo</a>`:'')}
+      </p>`;
+    return div;
+  }
+  items.forEach(p=>grid.appendChild(card(p)));
+})();
+</script>
+
 </main>
-
 <footer class="site-footer">
   <div class="container">
-    <p>© <span id="year"></span> Michael Musselman · Last edited November 02, 2025</p>
+    <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 02, 2025</span>.</p>
   </div>
 </footer>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script type="module" src="assets/js/projects.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>

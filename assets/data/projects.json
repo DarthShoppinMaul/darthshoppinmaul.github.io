@@ -1,63 +1,40 @@
 [
   {
-    "title": "Course Scheduling App",
-    "summary": "Full\u2011stack scheduling tool with /courses and /scheduledcourses, validation, and robust UI tests.",
+    "title": "CWEB 190 \u2014 A1: Semantic HTML & Responsive CSS",
+    "summary": "Foundations of semantic HTML, responsive layout, and accessibility checks.",
     "tags": [
-      "Full\u2011stack",
-      "Web App",
-      "CST"
+      "CWEB190",
+      "HTML",
+      "CSS"
     ],
-    "tech": [
-      "JavaScript",
-      "Node",
-      "C#",
-      "NUnit",
-      "Vite"
-    ],
-    "startDate": "2025-03-01",
-    "endDate": "2025-05-15",
-    "demo": "",
-    "source": "",
-    "caseStudy": "artifacts/artifact-course-scheduler.html",
-    "image": ""
+    "caseStudy": "/artifacts/cweb190-a1-semantic-html.html"
   },
   {
-    "title": "AVL Tree & Unit Testing",
-    "summary": "Balanced BST with add/remove and rotations; comprehensive edge\u2011case tests.",
+    "title": "CWEB 190 \u2014 A2: Forms & Validation",
+    "summary": "Accessible forms with labels, ARIA feedback, and client-side validation.",
     "tags": [
-      "Data Structures",
-      "Algorithms"
+      "CWEB190",
+      "Forms",
+      "Validation"
     ],
-    "tech": [
-      "C#",
-      "Generics",
-      "Big\u2011O",
-      "NUnit"
-    ],
-    "startDate": "2025-01-10",
-    "endDate": "2025-02-20",
-    "demo": "",
-    "source": "",
-    "caseStudy": "artifacts/artifact-avl-structures.html",
-    "image": ""
+    "caseStudy": "/artifacts/cweb190-a2-forms-validation.html"
   },
   {
-    "title": "Numerical Methods Toolkit (Java)",
-    "summary": "Left\u2011rectangle integration, bisection, iterative approximations with precision/loop caps.",
+    "title": "CWEB 190 \u2014 A3: JavaScript Interactivity",
+    "summary": "Interactive UI with modular JS, event delegation, and state.",
     "tags": [
-      "Numerical",
-      "Library"
+      "CWEB190",
+      "JavaScript"
     ],
-    "tech": [
-      "Java",
-      "Precision",
-      "Error analysis"
+    "caseStudy": "/artifacts/cweb190-a3-js-interactivity.html"
+  },
+  {
+    "title": "CWEB 190 \u2014 A4: Mini App / Integration",
+    "summary": "Small app integrating structure, styling, and interactivity with local state.",
+    "tags": [
+      "CWEB190",
+      "App"
     ],
-    "startDate": "2025-02-01",
-    "endDate": "2025-03-01",
-    "demo": "",
-    "source": "",
-    "caseStudy": "artifacts/artifact-numerical-methods.html",
-    "image": ""
+    "caseStudy": "/artifacts/cweb190-a4-mini-app.html"
   }
 ]
