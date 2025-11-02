@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Course Scheduling App",
+    "summary": "Full\u2011stack scheduling tool with /courses and /scheduledcourses, validation, and robust UI tests.",
+    "tags": [
+      "Full\u2011stack",
+      "Web App",
+      "CST"
+    ],
+    "tech": [
+      "JavaScript",
+      "Node",
+      "C#",
+      "NUnit",
+      "Vite"
+    ],
+    "startDate": "2025-03-01",
+    "endDate": "2025-05-15",
+    "demo": "",
+    "source": "",
+    "caseStudy": "artifacts/artifact-course-scheduler.html",
+    "image": ""
+  },
+  {
+    "title": "AVL Tree & Unit Testing",
+    "summary": "Balanced BST with add/remove and rotations; comprehensive edge\u2011case tests.",
+    "tags": [
+      "Data Structures",
+      "Algorithms"
+    ],
+    "tech": [
+      "C#",
+      "Generics",
+      "Big\u2011O",
+      "NUnit"
+    ],
+    "startDate": "2025-01-10",
+    "endDate": "2025-02-20",
+    "demo": "",
+    "source": "",
+    "caseStudy": "artifacts/artifact-avl-structures.html",
+    "image": ""
+  },
+  {
+    "title": "Numerical Methods Toolkit (Java)",
+    "summary": "Left\u2011rectangle integration, bisection, iterative approximations with precision/loop caps.",
+    "tags": [
+      "Numerical",
+      "Library"
+    ],
+    "tech": [
+      "Java",
+      "Precision",
+      "Error analysis"
+    ],
+    "startDate": "2025-02-01",
+    "endDate": "2025-03-01",
+    "demo": "",
+    "source": "",
+    "caseStudy": "artifacts/artifact-numerical-methods.html",
+    "image": ""
+  }
+]
