@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/* Some css to set up your finish line */
+
+#racePara {
+   height: 800px;
+   width: 1345px;
+   /* FINISH_LINE + length of car */
+   border-right: solid black 1px;
+}
+
+#racePara img {
+   position: absolute;
+   /* so cars can be drawn at specific screen locations */
+}

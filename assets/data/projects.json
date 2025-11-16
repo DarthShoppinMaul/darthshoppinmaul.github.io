@@ -1,47 +1,26 @@
 [
   {
+    "title": "Saskatoon 500 Car Race",
+    "summary": "Object-oriented racing simulation using ES6 classes, animation intervals, and persistent statistics.",
+    "tags": [
+      "CWEB190",
+      "JavaScript",
+      "OOP",
+      "Game"
+    ],
+    "caseStudy": "/artifacts/car-race-artifact.html",
+    "demo": "/artifacts/car-race/race.html"
+  },
+  {
     "title": "Whack-A-Mole Game",
     "summary": "Interactive browser game with jQuery animations, event handling, and dynamic DOM manipulation.",
-    "tags": ["CWEB190", "JavaScript", "jQuery", "Game"],
+    "tags": [
+      "CWEB190",
+      "JavaScript",
+      "jQuery",
+      "Game"
+    ],
     "caseStudy": "/artifacts/whackamole-artifact.html",
     "demo": "/artifacts/whackamole/whackamole.html"
-  },
-  {
-    "title": "CWEB 190 \u2014 A1: Semantic HTML & Responsive CSS",
-    "summary": "Foundations of semantic HTML, responsive layout, and accessibility checks.",
-    "tags": [
-      "CWEB190",
-      "HTML",
-      "CSS"
-    ],
-    "caseStudy": "/artifacts/cweb190-a1-semantic-html.html"
-  },
-  {
-    "title": "CWEB 190 \u2014 A2: Forms & Validation",
-    "summary": "Accessible forms with labels, ARIA feedback, and client-side validation.",
-    "tags": [
-      "CWEB190",
-      "Forms",
-      "Validation"
-    ],
-    "caseStudy": "/artifacts/cweb190-a2-forms-validation.html"
-  },
-  {
-    "title": "CWEB 190 \u2014 A3: JavaScript Interactivity",
-    "summary": "Interactive UI with modular JS, event delegation, and state.",
-    "tags": [
-      "CWEB190",
-      "JavaScript"
-    ],
-    "caseStudy": "/artifacts/cweb190-a3-js-interactivity.html"
-  },
-  {
-    "title": "CWEB 190 \u2014 A4: Mini App / Integration",
-    "summary": "Small app integrating structure, styling, and interactivity with local state.",
-    "tags": [
-      "CWEB190",
-      "App"
-    ],
-    "caseStudy": "/artifacts/cweb190-a4-mini-app.html"
   }
 ]
