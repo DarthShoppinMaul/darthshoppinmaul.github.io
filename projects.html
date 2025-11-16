@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Michael Musselman</title>
-  <meta name="description" content="E-portfolio showcasing projects, skills, and reflections.">
+  <meta name="description" content="A collection of academic and personal projects demonstrating my skills.">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="icon" href="/assets/img/favicon.svg">
 </head>
@@ -21,38 +21,78 @@
     </nav>
   </div>
 </header>
+
 <main class="container">
+  <h1>Projects</h1>
 
-<h1>Projects</h1>
-<section class="note small">
-  Use the Projects gallery for quick browsing. Reflections live on artifact pages.
-</section>
-<div class="summary small">Edit <code>/assets/data/projects.json</code> to update this list.</div>
-<section id="grid" class="cards"></section>
-<script>
-(async function(){
-  const res = await fetch('/assets/data/projects.json');
-  const items = await res.json();
-  const grid = document.getElementById('grid');
-  function card(p){
-    const div = document.createElement('article');
-    div.className='card';
-    div.innerHTML = `
-      <h3>${p.title||''}</h3>
-      <p class="small">${p.summary||''}</p>
-      <div class="small">${(p.tags||[]).map(t=>`<span class='badge'>${t}</span>`).join(' ')}</div>
-      <p class="small">
-        ${(p.caseStudy?`<a href="${p.caseStudy}">Case Study</a>`:'')}
-        ${(p.source?` · <a href="${p.source}">Source</a>`:'')}
-        ${(p.demo?` · <a href="${p.demo}">Demo</a>`:'')}
-      </p>`;
-    return div;
-  }
-  items.forEach(p=>grid.appendChild(card(p)));
-})();
-</script>
+  <section class="note">
+    <p class="small" style="margin: 0;">Browse my projects below. Each card links to a detailed case study with reflections on the development process, challenges, and lessons learned.</p>
+  </section>
 
+  <section id="grid" class="cards"></section>
+
+  <script>
+    (async function(){
+      try {
+        const res = await fetch('/assets/data/projects.json');
+        const items = await res.json();
+        const grid = document.getElementById('grid');
+
+        function createCard(project) {
+          const article = document.createElement('article');
+          article.className = 'card';
+
+          const title = document.createElement('h3');
+          title.textContent = project.title || '';
+
+          const summary = document.createElement('p');
+          summary.className = 'small';
+          summary.textContent = project.summary || '';
+
+          const tags = document.createElement('div');
+          tags.style.marginBottom = '1rem';
+          (project.tags || []).forEach(tag => {
+            const badge = document.createElement('span');
+            badge.className = 'badge';
+            badge.textContent = tag;
+            tags.appendChild(badge);
+          });
+
+          const links = document.createElement('p');
+          links.className = 'small';
+          links.style.marginBottom = '0';
+
+          const linkParts = [];
+          if (project.caseStudy) {
+            linkParts.push(`<a href="${project.caseStudy}">Case Study →</a>`);
+          }
+          if (project.source) {
+            linkParts.push(`<a href="${project.source}">Source Code</a>`);
+          }
+          if (project.demo) {
+            linkParts.push(`<a href="${project.demo}">Live Demo</a>`);
+          }
+          links.innerHTML = linkParts.join(' · ');
+
+          article.appendChild(title);
+          article.appendChild(summary);
+          article.appendChild(tags);
+          article.appendChild(links);
+
+          return article;
+        }
+
+        items.forEach(project => {
+          grid.appendChild(createCard(project));
+        });
+      } catch (error) {
+        console.error('Error loading projects:', error);
+        document.getElementById('grid').innerHTML = '<p class="small">Unable to load projects. Please check that /assets/data/projects.json exists.</p>';
+      }
+    })();
+  </script>
 </main>
+
 <footer class="site-footer">
   <div class="container">
     <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 02, 2025</span>.</p>
