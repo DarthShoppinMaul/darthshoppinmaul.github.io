@@ -45,9 +45,9 @@ $(function () {
  */
 function preloadMoleImages() {
     let moleRegular = new Image();
-    moleRegular.src = "../images/newmole.png";
+    moleRegular.src = "images/newmole.png";
     let moleSpecial = new Image();
-    moleSpecial.src = "../images/newmole2.png";
+    moleSpecial.src = "images/newmole2.png";
 }
 
 /**
@@ -151,7 +151,7 @@ function createMole() {
     let isSpecial = Math.random() < 0.25;
 
     //Choose the image file
-    let imageURL = isSpecial ? "../images/newmole2.png" : "../images/newmole.png";
+    let imageURL = isSpecial ? "images/newmole2.png" : "images/newmole.png";
 
     //Create img element for the mole
     let moleImg = $(`<img src="${imageURL}" style="display:none">`);
