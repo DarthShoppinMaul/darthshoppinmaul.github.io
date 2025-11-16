@@ -1,5 +1,12 @@
 [
   {
+    "title": "Whack-A-Mole Game",
+    "summary": "Interactive browser game with jQuery animations, event handling, and dynamic DOM manipulation.",
+    "tags": ["CWEB190", "JavaScript", "jQuery", "Game"],
+    "caseStudy": "/artifacts/whackamole-artifact.html",
+    "demo": "/artifacts/whackamole/whackamole.html"
+  },
+  {
     "title": "CWEB 190 \u2014 A1: Semantic HTML & Responsive CSS",
     "summary": "Foundations of semantic HTML, responsive layout, and accessibility checks.",
     "tags": [

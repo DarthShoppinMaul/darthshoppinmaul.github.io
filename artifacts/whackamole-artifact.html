@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whack-A-Mole Game — Michael Musselman</title>
+    <meta name="description" content="Interactive JavaScript game demonstrating DOM manipulation, event handling, and jQuery animations.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/img/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <a class="brand" href="/index.html">MM</a>
+        <nav class="nav">
+            <a href="/about.html">About</a>
+            <a href="/skills.html">Skills & Experience</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/artifacts/index.html">Artifacts</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Whack-A-Mole Game</h1>
+    <p class="small">Interactive browser game demonstrating jQuery, event handling, timers, and dynamic DOM manipulation.</p>
+
+    <h2>Summary</h2>
+    <p>This project involved creating a fully functional Whack-A-Mole game using HTML, CSS, and JavaScript with jQuery. The game features random mole spawning, click detection, scoring system with special moles, smooth animations, and an end-game results screen.</p>
+
+    <p>The game uses a 4×4 grid of holes where moles randomly appear. Players click on moles to score points, with regular moles worth 111 points and special rare moles worth 10,000 points. The game ends when 6 or more moles appear simultaneously on screen.</p>
+
+    <h2>Role & Technologies</h2>
+    <ul class="cols">
+        <li><strong>Role:</strong> Individual project</li>
+        <li><strong>Technologies:</strong> HTML5, CSS3, JavaScript (ES6), jQuery 3.7.1</li>
+        <li><strong>Duration:</strong> 2 weeks</li>
+        <li><strong>Course:</strong> CWEB 190 - Assignment #4</li>
+    </ul>
+
+    <h2>Key Features</h2>
+    <ul class="cols">
+        <li>Dynamic 4×4 grid generation with 16 clickable holes</li>
+        <li>Random mole spawning using intervals and probability</li>
+        <li>Two mole types: regular (111 pts) and special (10,000 pts)</li>
+        <li>Smooth jQuery animations for mole appearance and whacking</li>
+        <li>Real-time score tracking and point display</li>
+        <li>Game-over logic when 6+ moles appear simultaneously</li>
+        <li>Comprehensive end-game statistics screen</li>
+        <li>Image preloading for smooth performance</li>
+    </ul>
+
+    <h2>Technical Highlights</h2>
+
+    <h3>Dynamic DOM Generation</h3>
+    <p>The game board is generated dynamically in JavaScript, creating 16 hole divs with unique IDs. This approach makes it easy to scale the game (change NUM_HOLES constant) and keeps the HTML clean and maintainable.</p>
+
+    <h3>Event Delegation</h3>
+    <p>Click events are handled efficiently using jQuery's event delegation. Rather than attaching individual event handlers to each hole, a single handler manages all clicks and determines the appropriate action based on the hole's state (occupied vs. empty, regular vs. special mole).</p>
+
+    <h3>State Management</h3>
+    <p>The game tracks multiple state variables including current moles on screen, points scored, and counts of different mole types whacked. This allows for accurate game logic and comprehensive end-game statistics.</p>
+
+    <h3>Timer-Based Game Loop</h3>
+    <p>Uses <code>setInterval()</code> to spawn new moles every 500ms, creating continuous gameplay. The timer is properly cleared when the game ends to prevent memory leaks.</p>
+
+    <h3>CSS Grid Layout</h3>
+    <p>The game board uses CSS Grid for precise positioning of the 4×4 hole layout with proper spacing. This provides a clean, responsive layout that's easy to adjust.</p>
+
+    <h2>Reflection</h2>
+
+    <h3>Description: What was this assignment about?</h3>
+    <p>This assignment was about integrating JavaScript with the DOM to create an interactive, event-driven application. Unlike previous assignments that focused on forms or simple interactivity, this required managing game state, timers, animations, and user input simultaneously.</p>
+
+    <p>The Whack-A-Mole game taught me how to think about time-based events, random spawning logic, and creating smooth user experiences with animations. It was also my first experience building something that felt like a complete, polished game.</p>
+
+    <h3>Analysis: What design decisions mattered most?</h3>
+    <p><strong>Using jQuery for Animations:</strong> Rather than manually manipulating CSS properties, jQuery's <code>fadeIn()</code>, <code>fadeOut()</code>, and <code>slideUp()</code> methods provided smooth, built-in animations. This made the game feel much more polished with minimal code.</p>
+
+    <p><strong>Class-Based State Tracking:</strong> Using CSS classes like <code>.target</code> and <code>.special</code> to track hole occupancy was elegant. It allowed me to style moles with CSS while also using the classes as flags in my JavaScript logic.</p>
+
+    <p><strong>Separation of Concerns:</strong> Breaking the game into distinct functions (spawn, click handler, end game, update display) made the code much easier to debug and modify. Each function has a single, clear responsibility.</p>
+
+    <p><strong>Game Balance:</strong> Setting the loss condition at 6 simultaneous moles creates good tension. Too few would make the game too easy; too many would be overwhelming. The 25% chance for special moles also creates nice excitement without being too common.</p>
+
+    <h3>Challenges & Solutions</h3>
+    <p><strong>Challenge:</strong> Preventing players from clicking the same mole multiple times and scoring repeatedly.</p>
+    <p><strong>Solution:</strong> Used the <code>.target</code> class to track which holes have moles. The click handler checks for this class first and returns early if it's not present, preventing duplicate scoring.</p>
+
+    <p><strong>Challenge:</strong> Images sometimes appeared to "pop" instead of animating smoothly.</p>
+    <p><strong>Solution:</strong> Implemented image preloading in a dedicated function that runs on page load. This ensures images are cached before the game starts.</p>
+
+    <p><strong>Challenge:</strong> Moles would sometimes spawn in already-occupied holes.</p>
+    <p><strong>Solution:</strong> Used jQuery's <code>filter()</code> to find only available holes (those without the <code>.target</code> class) before randomly selecting one for spawning.</p>
+
+    <h3>What I Learned</h3>
+    <ul>
+        <li>How to use <code>setInterval()</code> and <code>clearTimeout()</code> for game loops</li>
+        <li>Managing multiple pieces of state in a JavaScript application</li>
+        <li>Event delegation patterns for efficient event handling</li>
+        <li>Using CSS classes as state flags in JavaScript</li>
+        <li>jQuery animation methods and chaining</li>
+        <li>Importance of proper cleanup (clearing timers) to prevent memory leaks</li>
+        <li>Random number generation with <code>Math.random()</code> and probability logic</li>
+    </ul>
+
+    <h3>Future Improvements</h3>
+    <p>With more time, I would add:</p>
+    <ul>
+        <li><strong>Difficulty Levels:</strong> Easy/Medium/Hard modes that adjust spawn rate and max moles</li>
+        <li><strong>High Score System:</strong> Use localStorage to persist high scores between sessions</li>
+        <li><strong>Sound Effects:</strong> Audio feedback for whacking moles and game over</li>
+        <li><strong>Countdown Timer:</strong> Time-based gameplay instead of just mole count</li>
+        <li><strong>Combo System:</strong> Bonus points for whacking moles in quick succession</li>
+        <li><strong>Mobile Touch Support:</strong> Better touch event handling for mobile devices</li>
+        <li><strong>Animations:</strong> More elaborate mole animations (peeking, retreating)</li>
+        <li><strong>Leaderboard:</strong> Submit scores to a server for global competition</li>
+    </ul>
+
+    <h2>Play the Game</h2>
+    <p>
+        <a class="button" href="/artifacts/whackamole/whackamole.html" target="_blank">Play Whack-A-Mole →</a>
+        <a class="button button-secondary" href="/artifacts/whackamole.zip">Download Source (ZIP)</a>
+    </p>
+
+    <div class="note">
+        <p class="small" style="margin: 0;"><strong>How to Play:</strong> Click "Start New Game" to begin. Click on moles as they pop up to score points. Regular moles are worth 111 points, special moles (with the mask) are worth 10,000 points! The game ends when 6 or more moles appear at once. Try to get the highest score!</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 16, 2025</span>.</p>
+    </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

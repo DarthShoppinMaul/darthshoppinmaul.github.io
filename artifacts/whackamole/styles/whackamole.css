@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*
+ Filename:    whackamole.css
+ Student:     Mike Musselman
+ Course:      CWEB 190 (Internet Programming/Web Applications 1)
+ Date:        April 5 2025
+ */
+
+/* Game screen formats */
+#game {
+   width: 668px;
+   margin: 0 auto;
+}
+
+/* Game title formats */
+#game header {
+   text-align: center;
+   background-color: aqua;
+   font-size: 300%;
+}
+
+/* Holes section formats */
+#holes {
+   margin: 1em 0;
+
+   /* Create a 4x4 grid for the mole holes */
+   display: grid;
+   grid-template-columns: repeat(4, 164px);
+   column-gap: 4px;
+   grid-template-rows: repeat(4, 150px);
+   row-gap: 6px;
+}
+
+/* Format for each mole hole div */
+#holes > div {
+   width: 164px;
+   height: 150px;
+   background-image: url("../images/newhole.jpg"); /* Start with empty hole */
+   display: flex; /* to allow hole images to be lined up at bottom of the div */
+}
+
+/* Format for each image in a mole hole */
+#holes > div > img {
+   align-self: flex-end; /* lines up images at the bottom of the div */
+}
+
+/* Format for the game results screen */
+#results {
+   display: none; /* initially hidden */
+   text-align: center;
+   font-size: 200%;
+   background-color: aquamarine;
+   font-weight: bold;
+   padding: 1em;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!--  
+  Filename: whackamole.html
+  Author:   Mike Musselman
+  Date: April 5 2025
+  Purpose:  Whack-A-Mole game for Assignment #4, CWEB 190 Winter 2025
+  -->
+   <meta charset="UTF-8">
+   <title>Whack-A-Mole</title>
+   <link rel="stylesheet" href="styles/whackamole.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script src="scripts/whackamole.js" defer></script>
+</head>
+<body>
+<section id="game">
+   <header><strong>Whack A Mole!</strong></header>
+
+<!--Game results screen-->
+   <section id="results">
+      <p>G A M E<br/>
+      O V E R</p>
+      <p>Regular moles whacked: <span id="numRegular"></span></p>
+      <p>Special moles whacked: <span id="numSpecial"></span></p>
+      <p>Total points awarded: <span id="numPoints"></span></p>
+   </section>
+
+<!--Section for mole holes, to be created in JavaScript-->
+   <section id="holes">
+   </section>
+
+<!--Game controls section-->
+   <section>
+      <button id="btnStart">Click to Start a New Game</button>
+      <span id="points"></span>
+   </section>
+</section>
+</body>
+</html>
