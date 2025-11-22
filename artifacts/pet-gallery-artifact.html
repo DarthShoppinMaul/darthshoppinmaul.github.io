@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet Gallery — Michael Musselman</title>
+    <meta name="description" content="Full-stack pet adoption platform with React frontend, FastAPI backend, and comprehensive admin management system.">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/img/favicon.svg">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <a class="brand" href="/index.html">MM</a>
+        <nav class="nav">
+            <a href="/about.html">About</a>
+            <a href="/skills.html">Skills & Experience</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/artifacts/index.html">Artifacts</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Pet Gallery — Full-Stack Adoption Platform</h1>
+    <p class="small">Production-ready pet adoption application with React, FastAPI, SQLite, JWT authentication, and role-based access control.</p>
+
+    <h2>Summary</h2>
+    <p>Pet Gallery is a comprehensive web application designed to streamline the pet adoption process. The platform enables adoption centers to manage their available pets and locations while allowing potential adopters to browse pets, submit adoption applications, and track their application status. The system includes robust authentication, role-based access control, and an admin dashboard for managing the entire adoption workflow.</p>
+
+    <p>This project demonstrates full-stack development capabilities including modern React frontend architecture, RESTful API design, database modeling with relationships, secure authentication patterns, and production-grade error handling and validation.</p>
+
+    <h2>Role & Technologies</h2>
+    <ul class="cols">
+        <li><strong>Role:</strong> Full-stack developer (pair project)</li>
+        <li><strong>Frontend:</strong> React, React Router, Axios, CSS3</li>
+        <li><strong>Backend:</strong> FastAPI (Python), Pydantic, Python-Jose (JWT)</li>
+        <li><strong>Database:</strong> SQLite, SQLAlchemy ORM</li>
+        <li><strong>Authentication:</strong> JWT tokens, Google OAuth 2.0</li>
+        <li><strong>Duration:</strong> 6 weeks</li>
+    </ul>
+
+    <h2>Key Features</h2>
+
+    <h3>Public Features</h3>
+    <ul class="cols">
+        <li>Browse available pets with photos and detailed information</li>
+        <li>Filter pets by adoption status (Available, Pending, Adopted)</li>
+        <li>Search functionality to find pets by name or characteristics</li>
+        <li>View adoption center locations with contact details</li>
+        <li>Detailed pet pages with full descriptions and photos</li>
+        <li>Responsive design for mobile and desktop viewing</li>
+    </ul>
+
+    <h3>Authenticated User Features</h3>
+    <ul class="cols">
+        <li>Create account with email/password or Google sign-in</li>
+        <li>Submit adoption applications for available pets</li>
+        <li>Track application status (Pending, Approved, Rejected)</li>
+        <li>Favorite pets using heart icon (many-to-many relationship)</li>
+        <li>View and manage all submitted applications</li>
+        <li>Edit profile information and account settings</li>
+        <li>Persistent login sessions with "Remember Me" option</li>
+    </ul>
+
+    <h3>Admin Features</h3>
+    <ul class="cols">
+        <li>Comprehensive dashboard with system statistics</li>
+        <li>Full CRUD operations for pets (Create, Read, Update, Delete)</li>
+        <li>Location management with cascade delete protection</li>
+        <li>User management and role assignment</li>
+        <li>Review and process adoption applications</li>
+        <li>Add admin notes to applications for internal tracking</li>
+        <li>Update pet adoption status directly from applications</li>
+        <li>Photo upload with validation (file type and size limits)</li>
+    </ul>
+
+    <h2>Technical Highlights</h2>
+
+    <h3>Database Architecture</h3>
+    <p>The application uses a well-normalized relational database with five core tables: Users, Pets, Locations, UserFavorites, and Applications. The schema implements proper foreign key relationships with cascade rules to maintain referential integrity.</p>
+
+    <p><strong>Key relationships include:</strong></p>
+    <ul>
+        <li><strong>One-to-Many:</strong> Locations → Pets (each location has multiple pets)</li>
+        <li><strong>Many-to-Many:</strong> Users ↔ Pets (through UserFavorites junction table)</li>
+        <li><strong>Many-to-One:</strong> Applications → Users and Applications → Pets</li>
+        <li><strong>Cascade Rules:</strong> Deleting a user removes their favorites and applications; deleting pets with associated data is protected</li>
+    </ul>
+
+    <p>SQLAlchemy ORM provides type safety, automatic migrations, and prevents SQL injection vulnerabilities through parameterized queries.</p>
+
+    <h3>RESTful API Design</h3>
+    <p>The FastAPI backend implements a clean REST architecture with proper HTTP methods and status codes:</p>
+    <ul>
+        <li><strong>GET</strong> endpoints return JSON arrays or single resources (200)</li>
+        <li><strong>POST</strong> endpoints create new resources (201) with location headers</li>
+        <li><strong>PUT</strong> endpoints update existing resources (200)</li>
+        <li><strong>DELETE</strong> endpoints remove resources (204 No Content)</li>
+        <li><strong>Error responses</strong> use appropriate 4xx/5xx codes with detailed messages</li>
+    </ul>
+
+    <p>FastAPI's automatic OpenAPI documentation provides interactive API testing at <code>/docs</code>, making development and debugging significantly easier.</p>
+
+    <h3>Authentication & Authorization</h3>
+    <p>The system implements secure JWT (JSON Web Token) authentication with both traditional email/password and OAuth 2.0 Google sign-in:</p>
+
+    <p><strong>Security features:</strong></p>
+    <ul>
+        <li>Password hashing with bcrypt (never storing plaintext passwords)</li>
+        <li>JWT tokens with expiration for stateless authentication</li>
+        <li>HTTP-only cookies to prevent XSS attacks (if implemented)</li>
+        <li>Role-based access control (admin vs regular user permissions)</li>
+        <li>Protected API routes with <code>@require_auth</code> decorators</li>
+        <li>Google OAuth integration for social login convenience</li>
+    </ul>
+
+    <p>Frontend route guards prevent unauthorized access to admin pages, while backend middleware validates all API requests.</p>
+
+    <h3>React Frontend Architecture</h3>
+    <p>The React application uses modern functional components with hooks for state management:</p>
+    <ul>
+        <li><strong>Component Structure:</strong> Reusable PetCard, UserProfile, ApplicationForm components</li>
+        <li><strong>State Management:</strong> React Context API for global auth state, useState/useEffect for local state</li>
+        <li><strong>Routing:</strong> React Router v6 with protected routes and nested layouts</li>
+        <li><strong>API Integration:</strong> Axios interceptors handle JWT tokens and error responses</li>
+        <li><strong>Form Validation:</strong> Client-side validation with immediate feedback before API calls</li>
+        <li><strong>Loading States:</strong> Skeleton loaders and spinners for better UX</li>
+    </ul>
+
+    <h3>Validation & Error Handling</h3>
+    <p>The application implements comprehensive validation at multiple layers:</p>
+
+    <p><strong>Client-side (React):</strong></p>
+    <ul>
+        <li>Form validation before submission (required fields, email format, file sizes)</li>
+        <li>Real-time feedback with error messages under invalid fields</li>
+        <li>Disabled submit buttons until forms are valid</li>
+    </ul>
+
+    <p><strong>Server-side (FastAPI):</strong></p>
+    <ul>
+        <li>Pydantic models enforce data types and constraints</li>
+        <li>Custom validators for business logic (e.g., prevent duplicate applications)</li>
+        <li>Detailed error responses with field-specific messages</li>
+        <li>Database constraint enforcement (unique emails, foreign keys)</li>
+    </ul>
+
+    <p>This defense-in-depth approach prevents invalid data from ever reaching the database while providing a smooth user experience.</p>
+
+    <h3>File Upload System</h3>
+    <p>Pet photos are handled with proper validation and storage:</p>
+    <ul>
+        <li>File type validation (only .jpg, .jpeg, .png, .webp allowed)</li>
+        <li>Size limits (5MB maximum to prevent abuse)</li>
+        <li>Preview generation before upload confirmation</li>
+        <li>Storage in organized directory structure</li>
+        <li>Proper MIME type checking on backend</li>
+    </ul>
+
+    <h2>Reflection</h2>
+
+    <h3>Description: What was this project about?</h3>
+    <p>This project was about building a complete, production-grade web application from the ground up. Unlike smaller assignments that focus on a single technology, this required integrating frontend, backend, database, and authentication into a cohesive system that solves a real-world problem.</p>
+
+    <p>The pet adoption domain provided interesting challenges around user roles (public users, authenticated adopters, and admins), complex relationships (favorites, applications, locations), and workflow management (application review and approval process). It taught me how to think about full-stack architecture, data flow between layers, and user experience across different roles.</p>
+
+    <h3>Analysis: What design decisions mattered most?</h3>
+
+    <p><strong>Choosing FastAPI over Flask/Django:</strong> FastAPI's automatic data validation with Pydantic types caught countless bugs early. The auto-generated OpenAPI docs saved hours of testing time, and async support made it easy to scale if needed. The performance and developer experience justified the learning curve.</p>
+
+    <p><strong>JWT Authentication Strategy:</strong> Stateless JWT tokens meant the backend doesn't need session storage, making it easier to scale horizontally. However, we had to carefully handle token expiration and refresh patterns. The tradeoff was complexity in logout (can't invalidate tokens server-side without a blacklist) versus simplicity in scaling.</p>
+
+    <p><strong>Many-to-Many Favorites:</strong> Creating a junction table for UserFavorites allowed multiple users to favorite the same pet without duplication. This normalized approach is more scalable than storing arrays of user IDs in the Pets table, and it made queries efficient with proper indexing.</p>
+
+    <p><strong>Role-Based Access Control:</strong> Implementing admin roles early paid dividends. Using a simple <code>is_admin</code> boolean and decorator functions (<code>@require_admin</code>) made securing endpoints straightforward. For future scaling, this could evolve into a permissions system with multiple roles.</p>
+
+    <p><strong>Client + Server Validation:</strong> Validating on both client and server was crucial. Client-side validation provides instant feedback and better UX, while server-side validation ensures security since client-side can be bypassed. The redundancy is intentional and necessary.</p>
+
+    <h3>Challenges & Solutions</h3>
+
+    <p><strong>Challenge:</strong> CORS errors when connecting React (localhost:3000) to FastAPI (localhost:8000).</p>
+    <p><strong>Solution:</strong> Configured FastAPI's CORS middleware to allow credentials and specific origins. Added <code>withCredentials: true</code> to Axios requests. Learned that CORS is a browser security feature, not a server restriction, which helped debug more effectively.</p>
+
+    <p><strong>Challenge:</strong> Preventing duplicate adoption applications for the same pet/user combination.</p>
+    <p><strong>Solution:</strong> Implemented a composite unique constraint on <code>(user_id, pet_id)</code> in the Applications table. Added a database-level check as well as an API endpoint to verify if an application exists before showing the application button. Defense in depth prevented edge cases.</p>
+
+    <p><strong>Challenge:</strong> Managing complex state across multiple components (auth state, favorites, applications).</p>
+    <p><strong>Solution:</strong> Used React Context for global auth state, then passed callbacks down for mutations. For favorites, implemented optimistic updates (update UI immediately, then sync with API). This made the app feel responsive even on slower connections.</p>
+
+    <p><strong>Challenge:</strong> Google OAuth integration was confusing with redirect URIs and token exchange.</p>
+    <p><strong>Solution:</strong> Spent time reading Google's OAuth documentation thoroughly. Used their OAuth Playground to test the flow manually first. Implemented a two-step process: frontend handles Google sign-in widget, backend verifies the token and creates/finds the user. Kept the logic separated for clarity.</p>
+
+    <p><strong>Challenge:</strong> Deciding when to show "Apply" buttons (only for available pets, only for authenticated users, only if no existing application).</p>
+    <p><strong>Solution:</strong> Created a reusable function <code>canApply(pet, user, applications)</code> that returns boolean and a reason string. This centralized the business logic and made the UI consistent across pet cards, detail pages, and admin views.</p>
+
+    <h3>What I Learned</h3>
+
+    <p><strong>Technical Skills:</strong></p>
+    <ul>
+        <li>Building RESTful APIs with FastAPI and proper HTTP semantics</li>
+        <li>Database design with normalization and relationship modeling</li>
+        <li>SQLAlchemy ORM for type-safe database operations</li>
+        <li>JWT authentication and authorization patterns</li>
+        <li>React hooks (useState, useEffect, useContext) and component lifecycle</li>
+        <li>OAuth 2.0 flow with Google integration</li>
+        <li>File upload handling with validation and storage</li>
+        <li>CORS configuration and cross-origin request handling</li>
+        <li>Environment variables and configuration management</li>
+        <li>API documentation with OpenAPI/Swagger</li>
+    </ul>
+
+    <p><strong>Software Engineering Concepts:</strong></p>
+    <ul>
+        <li>Separation of concerns (frontend/backend/database layers)</li>
+        <li>Defensive programming with validation at multiple layers</li>
+        <li>Idempotent operations (repeating requests safely)</li>
+        <li>Optimistic vs pessimistic updates in UIs</li>
+        <li>Role-based access control patterns</li>
+        <li>Database cascade rules and referential integrity</li>
+        <li>Error handling strategies (fail fast vs graceful degradation)</li>
+    </ul>
+
+    <p><strong>Development Process:</strong></p>
+    <ul>
+        <li>API-first development: designing endpoints before implementation</li>
+        <li>Testing API endpoints with Swagger UI and Postman</li>
+        <li>Version control with Git for collaboration</li>
+        <li>Writing clear commit messages and documenting decisions</li>
+        <li>Pair programming techniques and communication</li>
+        <li>Breaking large features into incremental commits</li>
+    </ul>
+
+    <h3>Future Improvements</h3>
+    <p>With more time and resources, I would enhance the application with:</p>
+
+    <p><strong>User Experience:</strong></p>
+    <ul>
+        <li><strong>Email Notifications:</strong> Send emails when application status changes or new pets matching preferences are added</li>
+        <li><strong>Advanced Search:</strong> Filter by breed, age range, size, and temperament with multi-select dropdowns</li>
+        <li><strong>Pet Recommendations:</strong> ML algorithm to suggest pets based on user favorites and applications</li>
+        <li><strong>Virtual Tours:</strong> 360° photos or video walkthroughs of adoption centers</li>
+        <li><strong>Chat System:</strong> Real-time messaging between adopters and adoption center staff</li>
+    </ul>
+
+    <p><strong>Technical Enhancements:</strong></p>
+    <ul>
+        <li><strong>PostgreSQL Migration:</strong> Move from SQLite to PostgreSQL for production deployment</li>
+        <li><strong>Redis Caching:</strong> Cache frequently accessed pets and locations to reduce database load</li>
+        <li><strong>Image CDN:</strong> Integrate with Cloudinary or AWS S3 for optimized image delivery</li>
+        <li><strong>Rate Limiting:</strong> Protect API from abuse with request rate limits per user</li>
+        <li><strong>Logging & Monitoring:</strong> Implement structured logging and error tracking (Sentry)</li>
+        <li><strong>Automated Testing:</strong> Unit tests for API endpoints, integration tests for user flows</li>
+        <li><strong>CI/CD Pipeline:</strong> Automated deployment with GitHub Actions or GitLab CI</li>
+    </ul>
+
+    <p><strong>Features:</strong></p>
+    <ul>
+        <li><strong>Multi-tenant Support:</strong> Allow multiple adoption centers to use the same platform with separate data</li>
+        <li><strong>Application Scheduling:</strong> Calendar integration for scheduling shelter visits</li>
+        <li><strong>Donation System:</strong> Stripe integration for donations to adoption centers</li>
+        <li><strong>Pet Health Records:</strong> Track vaccination history, medical notes, and veterinary contacts</li>
+        <li><strong>Success Stories:</strong> Gallery of adopted pets with updates from owners</li>
+        <li><strong>Volunteer Management:</strong> Allow centers to post volunteer opportunities</li>
+    </ul>
+
+    <h2>Project Links</h2>
+    <p>
+        <a class="button" href="https://github.com/yourusername/pet-gallery" target="_blank">View on GitHub →</a>
+        <a class="button button-secondary" href="https://github.com/yourusername/pet-gallery/blob/main/README.md" target="_blank">Documentation</a>
+    </p>
+
+    <div class="note">
+        <p class="small" style="margin: 0;"><strong>Note:</strong> This application requires a backend server and database to run. The live demo is not available on GitHub Pages due to server requirements. Please see the GitHub repository for setup instructions and screenshots of the application.</p>
+    </div>
+
+    <h3>Tech Stack Breakdown</h3>
+    <div class="item">
+        <p><strong>Frontend:</strong> React 18, React Router 6, Axios, CSS3 with responsive grid layouts</p>
+        <p><strong>Backend:</strong> FastAPI 0.100+, Python 3.11, Pydantic for data validation</p>
+        <p><strong>Database:</strong> SQLite (development), SQLAlchemy 2.0 ORM, Alembic for migrations</p>
+        <p><strong>Authentication:</strong> JWT tokens (python-jose), bcrypt password hashing, Google OAuth 2.0</p>
+        <p><strong>Development Tools:</strong> Git, Postman, Swagger UI, VS Code</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 22, 2025</span>.</p>
+    </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

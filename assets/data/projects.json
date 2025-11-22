@@ -1,12 +1,26 @@
 [
   {
+    "title": "Pet Gallery — Full-Stack Adoption Platform",
+    "summary": "Production-ready pet adoption application with React, FastAPI, SQLite, JWT authentication, and comprehensive admin management.",
+    "tags": [
+      "CWEB280",
+      "React",
+      "FastAPI",
+      "Python",
+      "SQLite",
+      "Full-Stack"
+    ],
+    "caseStudy": "/artifacts/pet-gallery-artifact.html",
+    "source": "https://github.com/yourusername/pet-gallery"
+  },
+  {
     "title": "Saskatoon 500 Car Race",
     "summary": "Object-oriented racing simulation using ES6 classes, animation intervals, and persistent statistics.",
     "tags": [
-      "CWEB190",
+      "HTML",
       "JavaScript",
       "OOP",
-      "Game"
+      "Web"
     ],
     "caseStudy": "/artifacts/car-race-artifact.html",
     "demo": "/artifacts/car-race/race.html"
@@ -15,10 +29,10 @@
     "title": "Whack-A-Mole Game",
     "summary": "Interactive browser game with jQuery animations, event handling, and dynamic DOM manipulation.",
     "tags": [
-      "CWEB190",
+      "HTML",
       "JavaScript",
       "jQuery",
-      "Game"
+      "Web"
     ],
     "caseStudy": "/artifacts/whackamole-artifact.html",
     "demo": "/artifacts/whackamole/whackamole.html"
