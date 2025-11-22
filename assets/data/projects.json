@@ -3,7 +3,6 @@
     "title": "Pet Gallery — Full-Stack Adoption Platform",
     "summary": "Production-ready pet adoption application with React, FastAPI, SQLite, JWT authentication, and comprehensive admin management.",
     "tags": [
-      "CWEB280",
       "React",
       "FastAPI",
       "Python",
