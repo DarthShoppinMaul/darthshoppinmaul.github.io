@@ -39,6 +39,7 @@
         <li><strong>Database:</strong> SQLite, SQLAlchemy ORM</li>
         <li><strong>Authentication:</strong> JWT tokens, Google OAuth 2.0</li>
         <li><strong>Duration:</strong> 6 weeks</li>
+        <li><strong>Course:</strong> CWEB 280 — Project 2</li>
     </ul>
 
     <h2>Key Features</h2>
@@ -159,6 +160,101 @@
         <li>Proper MIME type checking on backend</li>
     </ul>
 
+    <h2>Application Screenshots</h2>
+    <p class="small">Visual walkthrough of Pet Gallery across different user roles and features.</p>
+
+    <h3>Public Interface</h3>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Home Page</h4>
+        <img src="/artifacts/pet-gallery/screenshots/homepage.png" alt="Pet Gallery home page with hero section and featured pets" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Landing page with hero section, featured pets, and clear call-to-action buttons. Showcases available pets and happy adoption statistics.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Browse Pets</h4>
+        <img src="/artifacts/pet-gallery/screenshots/petlist.png" alt="Pet catalog with filtering, search, and card layout" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Interactive pet catalog with search bar and filter dropdowns for species, location, and adoption status. Each pet card displays key information and a "Learn More" button.</p>
+    </div>
+
+    <h3>Authentication</h3>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Login Page</h4>
+        <img src="/artifacts/pet-gallery/screenshots/loginpage.png" alt="Login form with email/password and Google OAuth options" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Clean login interface with traditional email/password authentication and Google OAuth integration. Includes "Remember Me" checkbox for persistent sessions.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Create Account</h4>
+        <img src="/artifacts/pet-gallery/screenshots/createaccountpage.png" alt="Sign up form with validation and Google OAuth option" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Registration form with client-side validation for email format, password strength, and terms acceptance. Also supports sign-up via Google OAuth.</p>
+    </div>
+
+    <h3>Authenticated User Features</h3>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>My Applications</h4>
+        <img src="/artifacts/pet-gallery/screenshots/myapplicationspage.png" alt="User's adoption applications with status tabs and filters" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Dashboard for users to track their adoption applications with status filters (All, Pending, Approved, Not Approved). Shows application date and current status with color coding.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Adoption Application Form</h4>
+        <img src="/artifacts/pet-gallery/screenshots/createapplicationpage.png" alt="Adoption application form with pet details and questionnaire" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Comprehensive application form showing pet details at top, followed by required questions about living situation, experience with pets, and reasons for adoption. Includes informational callout about next steps.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>User Profile</h4>
+        <img src="/artifacts/pet-gallery/screenshots/editprofilepage.png" alt="User profile page with account information and edit/delete options" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">User profile displaying account information including email, display name, account type badge, and member since date. Provides options to edit profile or delete account.</p>
+    </div>
+
+    <h3>Admin Dashboard & Management</h3>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Admin Dashboard</h4>
+        <img src="/artifacts/pet-gallery/screenshots/admindashboard.png" alt="Admin dashboard with statistics, pending applications, and quick actions" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Comprehensive admin dashboard featuring key statistics (total pets, locations, users, pending applications), recent pending applications with review buttons, and quick action cards for common tasks.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Pet Management</h4>
+        <img src="/artifacts/pet-gallery/screenshots/petmanagmentpage.png" alt="Pet management table with CRUD operations" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Data table for managing all pets in the system. Displays photo thumbnails, name, species, age, location, and adoption status. Each row has Edit and Delete action buttons. "Add New Pet" button at top.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Edit/Add Pet</h4>
+        <img src="/artifacts/pet-gallery/screenshots/editaddpetpage.png" alt="Pet form with photo upload and detailed fields" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Form for adding or editing pets with fields for name, species, age, location dropdown, description textarea, and photo upload with preview. Shows current photo when editing existing pets.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Application Review</h4>
+        <img src="/artifacts/pet-gallery/screenshots/reviewapplicationpage.png" alt="Application review interface with approve/reject actions" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Detailed application review page showing pet information, applicant details (name, email, phone, living situation, other pets), and their adoption reasoning. Includes admin notes section for internal tracking and approve/reject action buttons.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>User Management</h4>
+        <img src="/artifacts/pet-gallery/screenshots/usermanagmentpage.png" alt="User management table with role badges and edit/delete actions" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">User management interface displaying all registered users with email, display name, role badge (Admin/User), creation date, and action buttons. Allows admins to edit roles or delete users (with protection for admin accounts).</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Location Management</h4>
+        <img src="/artifacts/pet-gallery/screenshots/locationmanagmentpage.png" alt="Location management table for adoption centers" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Table view of all adoption center locations showing name, address, phone number, and Edit/Delete actions. Delete is prevented for locations with associated pets to maintain data integrity.</p>
+    </div>
+
+    <div class="item" style="margin-bottom: 2rem;">
+        <h4>Edit/Add Location</h4>
+        <img src="/artifacts/pet-gallery/screenshots/locationeditaddpage.png" alt="Location form with name, address, and phone fields" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 1rem;">
+        <p class="small">Simple form for adding or editing adoption center locations with fields for location name, address, and phone number.</p>
+    </div>
+
     <h2>Reflection</h2>
 
     <h3>Description: What was this project about?</h3>
@@ -267,12 +363,11 @@
 
     <h2>Project Links</h2>
     <p>
-        <a class="button" href="https://github.com/yourusername/pet-gallery" target="_blank">View on GitHub →</a>
-        <a class="button button-secondary" href="https://github.com/yourusername/pet-gallery/blob/main/README.md" target="_blank">Documentation</a>
+        <a class="button" href="https://https://github.com/DarthShoppinMaul/PetGallery" target="_blank">View on GitHub →</a>
     </p>
 
     <div class="note">
-        <p class="small" style="margin: 0;"><strong>Note:</strong> This application requires a backend server and database to run. The live demo is not available on GitHub Pages due to server requirements. Please see the GitHub repository for setup instructions and screenshots of the application.</p>
+        <p class="small" style="margin: 0;"><strong>Note:</strong> This application requires a backend server and database to run. The live demo is not available on GitHub Pages due to server requirements. Please see the GitHub repository for setup instructions and additional screenshots of the application.</p>
     </div>
 
     <h3>Tech Stack Breakdown</h3>
