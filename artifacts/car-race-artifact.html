@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Saskatoon 500 Car Race — Michael Musselman</title>
+    <title>Saskatoon 500 Car Race - Michael Musselman</title>
     <meta name="description" content="Object-oriented JavaScript racing game demonstrating classes, intervals, and game state management.">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="/assets/img/favicon.svg">
 </head>
 <body>
@@ -86,7 +87,7 @@
 
     <p><strong>Class Structure:</strong> Separating Car and Race responsibilities made the code much easier to reason about. Cars handle their own movement and rendering, while Race coordinates the overall game flow. This separation of concerns made debugging and adding features straightforward.</p>
 
-    <p><strong>Random Movement:</strong> Using <code>Math.random() * 10 + 1</code> creates unpredictable races. I tried different ranges—too small made races boring, too large made them chaotic. The 1-10 pixel range provides good drama without being too random.</p>
+    <p><strong>Random Movement:</strong> Using <code>Math.random() * 10 + 1</code> creates unpredictable races. I tried different ranges - ”too small made races boring, too large made them chaotic. The 1-10 pixel range provides good drama without being too random.</p>
 
     <p><strong>Button State Management:</strong> Disabling buttons during active races prevents users from clicking "Start" multiple times and creating multiple intervals. This was a critical decision that prevents bugs and makes the game feel polished.</p>
 
@@ -95,7 +96,7 @@
     <h3>Challenges & Solutions</h3>
 
     <p><strong>Challenge:</strong> Multiple interval timers being created when users clicked "Start" repeatedly.</p>
-    <p><strong>Solution:</strong> Implemented button state management—disabling "Start" and "Stats" buttons during active races, and only re-enabling them after reset. This prevents multiple timers from running simultaneously.</p>
+    <p><strong>Solution:</strong> Implemented button state management ”disabling "Start" and "Stats" buttons during active races, and only re-enabling them after reset. This prevents multiple timers from running simultaneously.</p>
 
     <p><strong>Challenge:</strong> Cars sometimes being added to standings multiple times.</p>
     <p><strong>Solution:</strong> Added a check in <code>addToStandings()</code> to verify the car isn't already in the standings array before adding it. Also used the <code>finishedRace</code> flag to ensure each car only crosses the finish line once.</p>
@@ -132,7 +133,7 @@
 
     <h2>Race the Cars</h2>
     <p>
-        <a class="button" href="/artifacts/car-race/race.html" target="_blank">Start Racing →</a>
+        <a class="button" href="/artifacts/car-race/race.html" target="_blank">Start Racing â†’</a>
     </p>
 
     <div class="note">
@@ -142,7 +143,13 @@
 
 <footer class="site-footer">
     <div class="container">
-        <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 16, 2025</span>.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/michael-musselman-421113391/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/DarthShoppinMaul" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/mikemusselman" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/michael.musselman.37/" target="_blank" rel="noopener" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p>&copy; <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 29, 2025</span>.</p>
     </div>
 </footer>
 <script src="/assets/js/main.js"></script>

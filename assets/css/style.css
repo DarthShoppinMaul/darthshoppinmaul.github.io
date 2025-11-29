@@ -265,7 +265,7 @@ main {
 }
 
 .cols li::before {
-  content: "→";
+  content: "â†’";
   position: absolute;
   left: 0;
   color: var(--accent);
@@ -355,6 +355,71 @@ ul {
 .summary {
   margin: 1rem 0 2rem;
 }
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.social-links a:hover.linkedin { color: #0077b5; border-color: #0077b5; }
+.social-links a:hover.github { color: #f0f6fc; border-color: #f0f6fc; }
+.social-links a:hover.instagram { color: #e4405f; border-color: #e4405f; }
+.social-links a:hover.facebook { color: #1877f2; border-color: #1877f2; }
+
+/* Contact page social section */
+.contact-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contact-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.contact-socials a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.contact-socials a.linkedin:hover { background: #0077b5; color: white; border-color: #0077b5; }
+.contact-socials a.github:hover { background: #333; color: white; border-color: #333; }
+.contact-socials a.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; border-color: transparent; }
+.contact-socials a.facebook:hover { background: #1877f2; color: white; border-color: #1877f2; }
 
 /* Footer */
 .site-footer {

@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pet Gallery — Michael Musselman</title>
+    <title>Pet Gallery - Michael Musselman</title>
     <meta name="description" content="Full-stack pet adoption platform with React frontend, FastAPI backend, and comprehensive admin management system.">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="/assets/img/favicon.svg">
 </head>
 <body>
@@ -23,7 +24,7 @@
 </header>
 
 <main class="container">
-    <h1>Pet Gallery — Full-Stack Adoption Platform</h1>
+    <h1>Pet Gallery - Full-Stack Adoption Platform</h1>
     <p class="small">Production-ready pet adoption application with React, FastAPI, SQLite, JWT authentication, and role-based access control.</p>
 
     <h2>Summary</h2>
@@ -39,7 +40,7 @@
         <li><strong>Database:</strong> SQLite, SQLAlchemy ORM</li>
         <li><strong>Authentication:</strong> JWT tokens, Google OAuth 2.0</li>
         <li><strong>Duration:</strong> 6 weeks</li>
-        <li><strong>Course:</strong> CWEB 280 — Project 2</li>
+        <li><strong>Course:</strong> CWEB 280 â€” Project 2</li>
     </ul>
 
     <h2>Key Features</h2>
@@ -84,9 +85,9 @@
 
     <p><strong>Key relationships include:</strong></p>
     <ul>
-        <li><strong>One-to-Many:</strong> Locations → Pets (each location has multiple pets)</li>
-        <li><strong>Many-to-Many:</strong> Users ↔ Pets (through UserFavorites junction table)</li>
-        <li><strong>Many-to-One:</strong> Applications → Users and Applications → Pets</li>
+        <li><strong>One-to-Many:</strong> Locations â†’ Pets (each location has multiple pets)</li>
+        <li><strong>Many-to-Many:</strong> Users â†” Pets (through UserFavorites junction table)</li>
+        <li><strong>Many-to-One:</strong> Applications â†’ Users and Applications â†’ Pets</li>
         <li><strong>Cascade Rules:</strong> Deleting a user removes their favorites and applications; deleting pets with associated data is protected</li>
     </ul>
 
@@ -336,7 +337,7 @@
         <li><strong>Email Notifications:</strong> Send emails when application status changes or new pets matching preferences are added</li>
         <li><strong>Advanced Search:</strong> Filter by breed, age range, size, and temperament with multi-select dropdowns</li>
         <li><strong>Pet Recommendations:</strong> ML algorithm to suggest pets based on user favorites and applications</li>
-        <li><strong>Virtual Tours:</strong> 360° photos or video walkthroughs of adoption centers</li>
+        <li><strong>Virtual Tours:</strong> 360Â° photos or video walkthroughs of adoption centers</li>
         <li><strong>Chat System:</strong> Real-time messaging between adopters and adoption center staff</li>
     </ul>
 
@@ -363,7 +364,7 @@
 
     <h2>Project Links</h2>
     <p>
-        <a class="button" href="https://github.com/DarthShoppinMaul/PetGallery" target="_blank">View on GitHub →</a>
+        <a class="button" href="https://github.com/DarthShoppinMaul/PetGallery" target="_blank">View on GitHub â†’</a>
     </p>
 
     <div class="note">
@@ -382,7 +383,13 @@
 
 <footer class="site-footer">
     <div class="container">
-        <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 22, 2025</span>.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/michael-musselman-421113391/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/DarthShoppinMaul" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/mikemusselman" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/michael.musselman.37/" target="_blank" rel="noopener" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p>&copy; <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 29, 2025</span>.</p>
     </div>
 </footer>
 <script src="/assets/js/main.js"></script>

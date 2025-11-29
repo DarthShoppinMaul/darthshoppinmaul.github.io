@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Whack-A-Mole Game — Michael Musselman</title>
+    <title>Whack-A-Mole Game - Michael Musselman</title>
     <meta name="description" content="Interactive JavaScript game demonstrating DOM manipulation, event handling, and jQuery animations.">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="/assets/img/favicon.svg">
 </head>
 <body>
@@ -29,7 +30,7 @@
     <h2>Summary</h2>
     <p>This project involved creating a fully functional Whack-A-Mole game using HTML, CSS, and JavaScript with jQuery. The game features random mole spawning, click detection, scoring system with special moles, smooth animations, and an end-game results screen.</p>
 
-    <p>The game uses a 4×4 grid of holes where moles randomly appear. Players click on moles to score points, with regular moles worth 111 points and special rare moles worth 10,000 points. The game ends when 6 or more moles appear simultaneously on screen.</p>
+    <p>The game uses a 4x4 grid of holes where moles randomly appear. Players click on moles to score points, with regular moles worth 111 points and special rare moles worth 10,000 points. The game ends when 6 or more moles appear simultaneously on screen.</p>
 
     <h2>Role & Technologies</h2>
     <ul class="cols">
@@ -40,7 +41,7 @@
 
     <h2>Key Features</h2>
     <ul class="cols">
-        <li>Dynamic 4×4 grid generation with 16 clickable holes</li>
+        <li>Dynamic 4x4 grid generation with 16 clickable holes</li>
         <li>Random mole spawning using intervals and probability</li>
         <li>Two mole types: regular (111 pts) and special (10,000 pts)</li>
         <li>Smooth jQuery animations for mole appearance and whacking</li>
@@ -65,7 +66,7 @@
     <p>Uses <code>setInterval()</code> to spawn new moles every 500ms, creating continuous gameplay. The timer is properly cleared when the game ends to prevent memory leaks.</p>
 
     <h3>CSS Grid Layout</h3>
-    <p>The game board uses CSS Grid for precise positioning of the 4×4 hole layout with proper spacing. This provides a clean, responsive layout that's easy to adjust.</p>
+    <p>The game board uses CSS Grid for precise positioning of the 4x4 hole layout with proper spacing. This provides a clean, responsive layout that's easy to adjust.</p>
 
     <h2>Reflection</h2>
 
@@ -119,7 +120,7 @@
 
     <h2>Play the Game</h2>
     <p>
-        <a class="button" href="/artifacts/whackamole/whackamole.html" target="_blank">Play Whack-A-Mole →</a>
+        <a class="button" href="/artifacts/whackamole/whackamole.html" target="_blank">Play Whack-A-Mole â†’</a>
     </p>
 
     <div class="note">
@@ -129,7 +130,13 @@
 
 <footer class="site-footer">
     <div class="container">
-        <p>© <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 16, 2025</span>.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/michael-musselman-421113391/" target="_blank" rel="noopener" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/DarthShoppinMaul" target="_blank" rel="noopener" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/mikemusselman" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/michael.musselman.37/" target="_blank" rel="noopener" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p>&copy; <span id="year"></span> Michael Musselman. Last edited: <span id="last-edited">November 29, 2025</span>.</p>
     </div>
 </footer>
 <script src="/assets/js/main.js"></script>
