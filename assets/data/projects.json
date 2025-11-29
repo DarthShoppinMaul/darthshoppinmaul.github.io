@@ -1,6 +1,6 @@
 [
   {
-    "title": "Pet Gallery — Full-Stack Adoption Platform",
+    "title": "Pet Gallery - Full-Stack Adoption Platform",
     "summary": "Production-ready pet adoption application with React, FastAPI, SQLite, JWT authentication, and comprehensive admin management.",
     "tags": [
       "React",
@@ -10,7 +10,7 @@
       "Full-Stack"
     ],
     "caseStudy": "/artifacts/pet-gallery-artifact.html",
-    "source": "https://https://github.com/DarthShoppinMaul/PetGallery"
+    "source": "https://github.com/DarthShoppinMaul/PetGallery"
   },
   {
     "title": "Saskatoon 500 Car Race",

@@ -15,9 +15,8 @@
     <a class="brand" href="/index.html">MM</a>
     <nav class="nav">
       <a href="/about.html">About</a>
-      <a href="/skills.html">Skills & Experience</a>
+      <a href="/skills.html">Skills</a>
       <a href="/projects.html">Projects</a>
-      <a href="/artifacts/index.html">Artifacts</a>
       <a href="/contact.html">Contact</a>
     </nav>
   </div>
@@ -26,9 +25,7 @@
 <main class="container">
   <h1>Projects</h1>
 
-  <section class="note">
-    <p class="small" style="margin: 0;">Browse my projects below. Each card links to a detailed case study with reflections on the development process, challenges, and lessons learned.</p>
-  </section>
+  <p class="lede" style="max-width: 700px;">A collection of interactive games and applications built during my Computer Systems Technology program. Each project demonstrates different aspects of web development.</p>
 
   <section id="grid" class="cards"></section>
 
@@ -65,15 +62,15 @@
 
           const linkParts = [];
           if (project.caseStudy) {
-            linkParts.push(`<a href="${project.caseStudy}">Case Study â†’</a>`);
+            linkParts.push('<a href="' + project.caseStudy + '">Case Study &rarr;</a>');
           }
           if (project.source) {
-            linkParts.push(`<a href="${project.source}">Source Code</a>`);
+            linkParts.push('<a href="' + project.source + '">Source Code</a>');
           }
           if (project.demo) {
-            linkParts.push(`<a href="${project.demo}">Live Demo</a>`);
+            linkParts.push('<a href="' + project.demo + '">Live Demo</a>');
           }
-          links.innerHTML = linkParts.join(' · ');
+          links.innerHTML = linkParts.join(' &middot; ');
 
           article.appendChild(title);
           article.appendChild(summary);
@@ -92,6 +89,10 @@
       }
     })();
   </script>
+
+  <div class="note" style="margin-top: 3rem;">
+    <p class="small" style="margin: 0;"><strong>Note:</strong> Each project links to a detailed case study with reflections on the development process, challenges faced, and lessons learned.</p>
+  </div>
 </main>
 
 <footer class="site-footer">

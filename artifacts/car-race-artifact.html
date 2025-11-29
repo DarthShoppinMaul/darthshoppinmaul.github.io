@@ -15,126 +15,91 @@
         <a class="brand" href="/index.html">MM</a>
         <nav class="nav">
             <a href="/about.html">About</a>
-            <a href="/skills.html">Skills & Experience</a>
+            <a href="/skills.html">Skills</a>
             <a href="/projects.html">Projects</a>
-            <a href="/artifacts/index.html">Artifacts</a>
             <a href="/contact.html">Contact</a>
         </nav>
     </div>
 </header>
 
 <main class="container">
+    <p class="small"><a href="/projects.html">&larr; Back to Projects</a></p>
+
     <h1>Saskatoon 500 Car Race</h1>
-    <p class="small">Object-oriented JavaScript racing simulation with ES6 classes, animation intervals, and persistent statistics.</p>
+    <p class="lede">Object-oriented JavaScript racing simulation with ES6 classes, animation intervals, and persistent statistics.</p>
 
-    <h2>Summary</h2>
-    <p>This project involved creating an animated racing game using object-oriented JavaScript with ES6 classes. Four cars race across the screen using random movement, with the first to cross the finish line declared the winner. The game tracks win statistics across multiple races and allows players to reset and race again.</p>
+    <div class="cta" style="margin-bottom: 3rem;">
+        <a class="button" href="/projects/car-race/race.html" target="_blank"><i class="fas fa-flag-checkered" style="margin-right: 0.5rem;"></i> Start Racing</a>
+    </div>
 
-    <p>The implementation demonstrates key object-oriented programming concepts including class constructors, encapsulation, methods, and state management. The game uses <code>setInterval()</code> for smooth animation, proper button state management to prevent errors, and maintains persistent statistics across multiple races.</p>
+    <div class="section-card">
+        <h2>Summary</h2>
+        <p>This project involved creating an animated racing game using object-oriented JavaScript with ES6 classes. Four cars race across the screen using random movement, with the first to cross the finish line declared the winner.</p>
+        <p style="margin-bottom: 0;">The implementation demonstrates key OOP concepts including class constructors, encapsulation, methods, and state management. The game uses <code>setInterval()</code> for smooth animation and maintains persistent statistics across multiple races.</p>
+    </div>
 
-    <h2>Role & Technologies</h2>
-    <ul class="cols">
-        <li><strong>Role:</strong> Individual project</li>
-        <li><strong>Technologies:</strong> HTML5, CSS3, JavaScript ES6 (Classes)</li>
-        <li><strong>Duration:</strong> 2 weeks</li>
-    </ul>
+    <div class="section-card">
+        <h2>Role &amp; Technologies</h2>
+        <div class="skill-grid">
+            <span class="skill-pill"><i class="fas fa-user"></i> Individual Project</span>
+            <span class="skill-pill"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="skill-pill"><i class="fab fa-js"></i> JavaScript ES6</span>
+            <span class="skill-pill"><i class="fas fa-cubes"></i> OOP Classes</span>
+            <span class="skill-pill"><i class="fas fa-clock"></i> 2 Weeks</span>
+        </div>
+    </div>
 
-    <h2>Key Features</h2>
-    <ul class="cols">
-        <li>Object-oriented design with Car and Race classes</li>
-        <li>Random movement generation (1-10 pixels per frame)</li>
-        <li>Real-time position tracking with absolute positioning</li>
-        <li>Automatic finish line detection at 1000px</li>
-        <li>Race standings tracking in finish order</li>
-        <li>Persistent win statistics across multiple races</li>
-        <li>Button state management to prevent race conflicts</li>
-        <li>Clean reset functionality for multiple races</li>
-    </ul>
+    <div class="section-card">
+        <h2>Key Features</h2>
+        <ul class="cols">
+            <li>Object-oriented design with Car and Race classes</li>
+            <li>Random movement generation (1-10 pixels per frame)</li>
+            <li>Real-time position tracking with absolute positioning</li>
+            <li>Automatic finish line detection at 1000px</li>
+            <li>Race standings tracking in finish order</li>
+            <li>Persistent win statistics across multiple races</li>
+            <li>Button state management to prevent race conflicts</li>
+            <li>Clean reset functionality for multiple races</li>
+        </ul>
+    </div>
 
-    <h2>Technical Highlights</h2>
+    <div class="section-card">
+        <h2>Technical Highlights</h2>
 
-    <h3>Object-Oriented Architecture</h3>
-    <p>The game uses a well-structured OOP design with two main classes:</p>
+        <h3>Object-Oriented Architecture</h3>
+        <p><strong>Car Class:</strong> Encapsulates individual car properties including position tracking, rendering with inline styles, random movement generation, and win count persistence.</p>
+        <p><strong>Race Class:</strong> Manages the overall race state including the array of cars, race completion status, standings tracking, and race statistics.</p>
 
-    <p><strong>Car Class:</strong> Encapsulates individual car properties and behaviors including position tracking, rendering with inline styles, random movement generation, and win count persistence. Each car manages its own state including horizontal position, finish status, and lifetime wins.</p>
+        <h3>Animation and Timing</h3>
+        <p style="margin-bottom: 0;">The game uses <code>setInterval()</code> with a 10-millisecond delay to create smooth 100 FPS animation. On each tick, all unfinished cars move a random distance (1-10 pixels), creating unpredictable racing dynamics.</p>
+    </div>
 
-    <p><strong>Race Class:</strong> Manages the overall race state including the array of cars, race completion status, standings tracking, and race statistics. The Race class coordinates all car movements and determines race completion.</p>
+    <div class="section-card">
+        <h2>Reflection</h2>
 
-    <h3>Animation and Timing</h3>
-    <p>The game uses <code>setInterval()</code> with a 10-millisecond delay to create smooth 100 FPS animation. On each tick, all unfinished cars move a random distance (1-10 pixels), creating unpredictable racing dynamics. The interval is properly cleaned up with <code>clearInterval()</code> when the race ends or is reset to prevent memory leaks.</p>
+        <h3>What I Learned</h3>
+        <ul class="cols">
+            <li>ES6 class syntax and constructor methods</li>
+            <li>Encapsulation and method organization</li>
+            <li>Managing animation with intervals</li>
+            <li>Tracking complex state across objects</li>
+            <li>Dynamic HTML generation with template literals</li>
+            <li>Absolute positioning for game elements</li>
+            <li>Importance of cleaning up intervals</li>
+            <li>User experience considerations</li>
+        </ul>
 
-    <h3>State Management</h3>
-    <p>The game carefully manages multiple pieces of state:</p>
-    <ul>
-        <li>Individual car positions and finish status</li>
-        <li>Race completion flag to stop the interval</li>
-        <li>Ordered standings array tracking finish positions</li>
-        <li>Win counts persisting across multiple races</li>
-        <li>Button enabled/disabled states to prevent conflicts</li>
-    </ul>
-
-    <h3>Dynamic Rendering</h3>
-    <p>Cars are rendered using absolute positioning with inline styles generated dynamically. Each car's <code>draw()</code> method returns an HTML string with current position, which is injected into the DOM on every frame. This approach allows for smooth, flicker-free animation.</p>
-
-    <h2>Reflection</h2>
-
-    <h3>Description: What was this assignment about?</h3>
-    <p>This assignment was about applying object-oriented programming principles to create an interactive, animated application. Unlike typical form-based assignments, this required thinking about game loops, animation frames, and managing complex state across multiple objects.</p>
-
-    <p>The racing game taught me how to structure classes effectively, manage timing with intervals, and coordinate multiple objects working together toward a common goal. It was my first substantial project using ES6 classes and really helped solidify OOP concepts.</p>
-
-    <h3>Analysis: What design decisions mattered most?</h3>
-
-    <p><strong>Class Structure:</strong> Separating Car and Race responsibilities made the code much easier to reason about. Cars handle their own movement and rendering, while Race coordinates the overall game flow. This separation of concerns made debugging and adding features straightforward.</p>
-
-    <p><strong>Random Movement:</strong> Using <code>Math.random() * 10 + 1</code> creates unpredictable races. I tried different ranges - ”too small made races boring, too large made them chaotic. The 1-10 pixel range provides good drama without being too random.</p>
-
-    <p><strong>Button State Management:</strong> Disabling buttons during active races prevents users from clicking "Start" multiple times and creating multiple intervals. This was a critical decision that prevents bugs and makes the game feel polished.</p>
-
-    <p><strong>Persistent Statistics:</strong> Tracking wins across multiple races adds depth to the game. Players can run multiple races to see which car "really" is fastest given the randomness, making it more engaging than a single race.</p>
-
-    <h3>Challenges & Solutions</h3>
-
-    <p><strong>Challenge:</strong> Multiple interval timers being created when users clicked "Start" repeatedly.</p>
-    <p><strong>Solution:</strong> Implemented button state management ”disabling "Start" and "Stats" buttons during active races, and only re-enabling them after reset. This prevents multiple timers from running simultaneously.</p>
-
-    <p><strong>Challenge:</strong> Cars sometimes being added to standings multiple times.</p>
-    <p><strong>Solution:</strong> Added a check in <code>addToStandings()</code> to verify the car isn't already in the standings array before adding it. Also used the <code>finishedRace</code> flag to ensure each car only crosses the finish line once.</p>
-
-    <p><strong>Challenge:</strong> Race not stopping cleanly when all cars finished.</p>
-    <p><strong>Solution:</strong> Tracked <code>numCarsDone</code> and compared it to the total number of cars. When equal, the interval is cleared, preventing unnecessary processing after the race is over.</p>
-
-    <h3>What I Learned</h3>
-    <ul>
-        <li>ES6 class syntax and constructor methods</li>
-        <li>Encapsulation and method organization in classes</li>
-        <li>Managing animation with <code>setInterval()</code> and <code>clearInterval()</code></li>
-        <li>Tracking complex state across multiple objects</li>
-        <li>Dynamic HTML generation with template literals</li>
-        <li>Absolute positioning for game elements</li>
-        <li>Importance of cleaning up intervals to prevent memory leaks</li>
-        <li>User experience considerations (button states, clear feedback)</li>
-        <li>Random number generation and game balance</li>
-    </ul>
-
-    <h3>Future Improvements</h3>
-    <p>With more time, I would add:</p>
-    <ul>
-        <li><strong>Visual Enhancements:</strong> Add a checkered flag at the finish line, racing track background, and animated crowd</li>
-        <li><strong>Sound Effects:</strong> Engine sounds, crowd cheering, and victory fanfare</li>
-        <li><strong>More Game Modes:</strong> Time trials, tournament brackets, handicap races</li>
-        <li><strong>Car Customization:</strong> Let users pick colors, names, or upload custom car images</li>
-        <li><strong>Speed Adjustments:</strong> Variable speeds for different car types instead of purely random</li>
-        <li><strong>Better Statistics:</strong> Show average finish position, best time, head-to-head records</li>
-        <li><strong>Replay System:</strong> Record and replay winning races</li>
-        <li><strong>Mobile Support:</strong> Vertical orientation for mobile devices</li>
-        <li><strong>Betting System:</strong> Let users "bet" on cars before the race</li>
-    </ul>
-
-    <h2>Race the Cars</h2>
-    <p>
-        <a class="button" href="/artifacts/car-race/race.html" target="_blank">Start Racing â†’</a>
-    </p>
+        <h3>Future Improvements</h3>
+        <ul class="cols">
+            <li>Checkered flag and track background</li>
+            <li>Sound effects (engine, crowd, victory)</li>
+            <li>Tournament brackets and time trials</li>
+            <li>Car customization options</li>
+            <li>Better statistics display</li>
+            <li>Mobile-friendly vertical layout</li>
+        </ul>
+    </div>
 
     <div class="note">
         <p class="small" style="margin: 0;"><strong>How to Race:</strong> Click "Start Race!" to begin. Cars will race across the screen with random movement speeds. The first car to reach the finish line wins! Use "Reset Race" to race again, and "View Statistics" to see which car has won the most races.</p>
