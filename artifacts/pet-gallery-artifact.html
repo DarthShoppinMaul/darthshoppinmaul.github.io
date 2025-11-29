@@ -8,6 +8,42 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" href="/assets/img/favicon.svg">
+    <style>
+        .screenshot {
+            margin-bottom: 2.5rem;
+        }
+        .screenshot img {
+            width: 100%;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border);
+            margin-bottom: 0.75rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .screenshot img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+        .screenshot h4 {
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .screenshot p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 <header class="site-header">
@@ -67,6 +103,96 @@
     </div>
 
     <div class="section-card">
+        <h2>Screenshots</h2>
+        <p class="small" style="margin-bottom: 2rem;">Visual walkthrough of Pet Gallery across different user roles and features.</p>
+
+        <h3>Public Interface</h3>
+        <div class="screenshot-grid">
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/homepage.png" alt="Pet Gallery home page">
+                <h4>Home Page</h4>
+                <p>Landing page with hero section, featured pets, and adoption statistics.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/petlist.png" alt="Pet catalog with filters">
+                <h4>Pet Catalog</h4>
+                <p>Interactive catalog with search and filters for species, location, and status.</p>
+            </div>
+        </div>
+
+        <h3>Authentication</h3>
+        <div class="screenshot-grid">
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/loginpage.png" alt="Login page">
+                <h4>Login Page</h4>
+                <p>Clean login interface with email/password and Google OAuth options.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/createaccountpage.png" alt="Create account page">
+                <h4>Create Account</h4>
+                <p>Registration form with validation and Google OAuth sign-up option.</p>
+            </div>
+        </div>
+
+        <h3>User Features</h3>
+        <div class="screenshot-grid">
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/myapplicationspage.png" alt="My applications page">
+                <h4>My Applications</h4>
+                <p>Dashboard to track adoption applications with status filters.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/createapplicationpage.png" alt="Create application form">
+                <h4>Adoption Application</h4>
+                <p>Comprehensive form with pet details and adoption questionnaire.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/editprofilepage.png" alt="Edit profile page">
+                <h4>User Profile</h4>
+                <p>Account information display with edit and delete options.</p>
+            </div>
+        </div>
+
+        <h3>Admin Dashboard</h3>
+        <div class="screenshot-grid">
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/admindashboard.png" alt="Admin dashboard">
+                <h4>Admin Dashboard</h4>
+                <p>Statistics overview, pending applications, and quick action cards.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/reviewapplicationpage.png" alt="Application review page">
+                <h4>Application Review</h4>
+                <p>Detailed view with applicant info, admin notes, and approve/reject actions.</p>
+            </div>
+        </div>
+
+        <h3>Admin Management</h3>
+        <div class="screenshot-grid">
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/petmanagmentpage.png" alt="Pet management page">
+                <h4>Pet Management</h4>
+                <p>Data table with photo thumbnails and CRUD operations for all pets.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/editaddpetpage.png" alt="Add/edit pet form">
+                <h4>Add/Edit Pet</h4>
+                <p>Form with photo upload, species, age, location, and description fields.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/usermanagmentpage.png" alt="User management page">
+                <h4>User Management</h4>
+                <p>User list with role badges and admin/delete capabilities.</p>
+            </div>
+            <div class="screenshot">
+                <img src="./pet-gallery/screenshots/locationmanagmentpage.png" alt="Location management page">
+                <h4>Location Management</h4>
+                <p>Adoption center locations with cascade delete protection.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
         <h2>Technical Highlights</h2>
 
         <h3>Database Architecture</h3>
@@ -80,31 +206,6 @@
 
         <h3>React Frontend</h3>
         <p style="margin-bottom: 0;">Modern functional components with hooks, React Router v6 with protected routes, Axios interceptors for API integration, and client-side form validation.</p>
-    </div>
-
-    <div class="section-card">
-        <h2>Screenshots</h2>
-        <p class="small">Visual walkthrough of Pet Gallery across different user roles.</p>
-
-        <div class="cards" style="margin-top: 1.5rem;">
-            <div class="card">
-                <h3>Home Page</h3>
-                <p>Landing page with hero section, featured pets, and adoption statistics.</p>
-            </div>
-            <div class="card">
-                <h3>Pet Catalog</h3>
-                <p>Interactive catalog with search, filters for species/location/status.</p>
-            </div>
-            <div class="card">
-                <h3>Admin Dashboard</h3>
-                <p>Statistics, pending applications, and quick action cards.</p>
-            </div>
-            <div class="card">
-                <h3>Application Review</h3>
-                <p>Detailed view with applicant info, admin notes, approve/reject.</p>
-            </div>
-        </div>
-        <p class="small">Full screenshots available in the GitHub repository.</p>
     </div>
 
     <div class="section-card">
@@ -150,7 +251,7 @@
     </div>
 
     <div class="note">
-        <p class="small" style="margin: 0;"><strong>Note:</strong> This application requires a backend server and database to run. See the GitHub repository for setup instructions.</p>
+        <p class="small" style="margin: 0;"><strong>Note:</strong> This application requires a backend server and database to run locally. See the GitHub repository for setup instructions.</p>
     </div>
 
     <div class="section-card">
